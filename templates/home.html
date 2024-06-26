@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static "styles.css" %}">
+    <title>Document</title>
+    
+</head>
+{% comment %} <body>
+    <h1>Welcome to the world</h1>
+    <h2 style=color:blue;font-size:40px>Welcome to the world</h2> 
+    <marquee behavior="" direction="">hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii</marquee>      {% endcomment %}
+
+
+    <h1>Welcome TO THE WORLD</h1>
+    {% comment %} {%if 10 < 20 %}
+        <p>inside if</p>
+    {% endif %}    
+
+    {% if name == 'Django' %}
+       {{name}}
+        {{type}} <br>
+    {% endif %}
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Fruit Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for fruit in fruits %}
+               <tr>
+                <td>{{forloop.counter}}</td>
+                <td>{{fruit}}</td>
+               </tr>
+                {% endfor %}
+        </tbody>
+
+    </table> {% endcomment %}
+
+<p>the logged user is {{request.user}}</p>
+<table border="2">
+
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Number</th>
+            <th>Pass/Fail</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for student   in  students %}
+          <tr>
+            <td>{{student.name}}</td>
+            <td>{{student.age}}</td>
+            <td>{{student.number}}</td>
+            <td>{% if student.marks >= 35 %}
+                Pass
+                {% else %}
+                Fail
+                {% endif %}
+            </td>
+
+          </tr>
+
+        {% endfor %}
+    </tbody>
+
+</table>
+
+<script src="{% static "sample.js" %}"></script>
+<img src="{% static "images/IMG_20220626_165016_372.jpg" %}" alt="My image">
+
+</body>
+</html>
